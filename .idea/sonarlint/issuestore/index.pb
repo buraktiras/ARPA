@@ -1,0 +1,27 @@
+
+I
+src/main/webapp/index.jsp,8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded
+J
+src/main/webapp/index.html,1/3/1337d72a3b1928dba82aa5210f5cdc0e88ce895b
+8
+ARPA.iml,f/d/fd3ea805412854b20692d77f075e0b4572e7697f
+O
+src/main/webapp/WEB-INF/web.xml,2/e/2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+u
+EAngularJs_Rest/ARPA/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF,2/d/2d7d7efdd5c2783ee0a3860556ffafc84537bac7
+Ü
+VAngularJs_Rest/ARPA/target/m2e-wtp/web-resources/META-INF/maven/com.arpax/ARPA/pom.xml,6/3/63f07cdf93673050e28476b38ec0aee8909b5b6b
+ç
+]AngularJs_Rest/ARPA/target/m2e-wtp/web-resources/META-INF/maven/com.arpax/ARPA/pom.properties,c/7/c7e7199968836a0c3c086616f0fa531fd63b3078
+U
+%src/main/java/com/arpax/ARPA/App.java,3/f/3ff22820ed3509ed8cfdfbbeb7645f1a671d3ad7
+`
+0src/main/java/com/arpax/ARPA/model/Employee.java,f/4/f40aa7a9be0ee7074b7ff79844067dd793116c18
+o
+?src/main/java/com/arpax/ARPA/repository/EmployeeRepository.java,4/9/49956a246f9ffe314bff4644e80ab21208aa6b88
+h
+8src/main/java/com/arpax/ARPA/sevice/EmployeeService.java,5/f/5f156a72b6026cf80a1136f8114eb8cb680b1316
+m
+=src/main/java/com/arpax/ARPA/controller/EmployeeResource.java,d/c/dcbf2f637e73351acc288141212d4e88052e484b
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
