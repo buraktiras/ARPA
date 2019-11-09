@@ -1,14 +1,16 @@
-angular.module("crudApp").controller("GeneralController", GeneralController);
+angular.module("crudAppEmployee").controller("EmployeeController", EmployeeController);
 
-GeneralController.inject = [ '$scope', 'Employee' ];
+EmployeeController.inject = [ '$scope', 'Employee' ];
 
-function GeneralController($scope, Employee) {
+function EmployeeController($scope, Employee) {
 	
 	$scope.employees = Employee.query();
 
 	$scope.employee = {};
 	
 	$scope.buttonText="Submit";
+	$scope.addNewUserButtonText="Add New User";
+	$scope.cancelUserButtonText="Cancel";
 	
 	$scope.saveEmployee = function() {
 		if ($scope.employee.id !== undefined) {

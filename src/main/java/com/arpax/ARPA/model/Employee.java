@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.util.Date;
+
 @Entity
 @Table(name="Employee")
 @EntityListeners(AuditingEntityListener.class)
@@ -22,6 +24,16 @@ public class Employee {
 	private String department;
 
 	private Integer salary;
+
+	private String login;
+
+	private String email;
+
+	private String profile;
+
+	private Date createdDate;
+
+	private Date modifiedDate;
 
 	public Employee() {
 	}
@@ -61,5 +73,45 @@ public class Employee {
 
 	public void setSalary(Integer salary) {
 		this.salary = salary;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
 	}
 }
