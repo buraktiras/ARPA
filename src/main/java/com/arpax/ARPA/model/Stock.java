@@ -17,9 +17,9 @@ public class Stock {
 
 	private String name;
 
-	private Date createdDate;
+	private String createdDate;
 
-	private Date modifiedDate;
+	private String modifiedDate;
 
 	private String modifiedBy;
 
@@ -50,19 +50,19 @@ public class Stock {
 		this.name = name;
 	}
 
-	public Date getCreatedDate() {
+	public String getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
+	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
 	}
 
-	public Date getModifiedDate() {
+	public String getModifiedDate() {
 		return modifiedDate;
 	}
 
-	public void setModifiedDate(Date modifiedDate) {
+	public void setModifiedDate(String modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
 

@@ -31,23 +31,12 @@ public class Employee {
 
 	private String profile;
 
-	private Date createdDate;
+	private String createdDate;
 
-	private Date modifiedDate;
+	private String modifiedDate;
 
 	public Employee() {
 	}
-
-	
-	public String getDepartment() {
-		return department;
-	}
-
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
 
 	public Integer getId() {
 		return id;
@@ -65,7 +54,13 @@ public class Employee {
 		this.name = name;
 	}
 
-	
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 
 	public Integer getSalary() {
 		return salary;
@@ -99,19 +94,19 @@ public class Employee {
 		this.profile = profile;
 	}
 
-	public Date getCreatedDate() {
+	public String getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
+	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
 	}
 
-	public Date getModifiedDate() {
+	public String getModifiedDate() {
 		return modifiedDate;
 	}
 
-	public void setModifiedDate(Date modifiedDate) {
+	public void setModifiedDate(String modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
 }

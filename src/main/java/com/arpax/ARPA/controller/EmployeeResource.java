@@ -2,6 +2,8 @@ package com.arpax.ARPA.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityExistsException;
@@ -37,6 +39,9 @@ public class EmployeeResource {
 	@RequestMapping(value = "employee", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) throws URISyntaxException {
 		try {
+			String formattedDate = this.datePattern();
+			employee.setCreatedDate(formattedDate);
+			employee.setModifiedDate(formattedDate);
 			Employee result = employeeService.save(employee);
 			return ResponseEntity.created(new URI("/api/employee/" + result.getId())).body(result);
 		} catch (EntityExistsException e) {
@@ -51,6 +56,8 @@ public class EmployeeResource {
 		}
 
 		try {
+			String formattedDate = this.datePattern();
+			employee.setModifiedDate(formattedDate);
 			Employee result = employeeService.update(employee);
 
 			return ResponseEntity.created(new URI("/api/employee/" + result.getId())).body(result);
@@ -64,5 +71,15 @@ public class EmployeeResource {
 		employeeService.delete(id);
 
 		return ResponseEntity.ok().build();
+	}
+
+	private String datePattern() {
+
+		Date date = new Date();
+		String pattern = "dd-MM-yyyy hh:mm:ss";
+		SimpleDateFormat simpleFormatter  = new SimpleDateFormat(pattern);
+		String formattedDate = simpleFormatter.format(date);
+
+		return formattedDate;
 	}
 }
