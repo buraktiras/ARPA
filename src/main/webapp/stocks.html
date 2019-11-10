@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stocks</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-resource.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/controllers/stock.controller.js"></script>
+<script type="text/javascript" src="app/services/stock.service.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="crudAppStock" ng-controller="StockController">
+<!-- Tab content -->
+		<h3>Stock</h3>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form class="col-md-4" ng-submit="saveStock()">
+					<div class="form-group">
+						<label for="stockCode">Code</label>
+						<input type="text" ng-model="stock.code" class="form-control" id="stockCode" placeholder="Code">
+					</div>
+					<div class="form-group">
+						<label for="stockName">Name</label>
+						<input type="text" ng-model="stock.name" class="form-control" id="stockName" placeholder="Name">
+					</div>
+
+					<button type="submit" class="btn btn-default">{{buttonText}}</button>
+					<button type="submit" class="btn btn-default">{{cancelButtonText}}</button>
+
+				</form>
+
+				<div class="table-responsive col-md-6">
+					<table class="table table-striped">
+						<tr>
+							<th>Code</th>
+							<th>Name</th>
+							<th>Creted Date</th>
+							<th>Last Modified By</th>
+							<th>Last Modified Date</th>
+							<th></th>
+						</tr>
+						<tr ng-repeat="stock in stocks">
+							<td>{{stock.code}}</td>
+							<td>{{stock.name}}</td>
+							<td>{{stock.createdDate}}</td>
+							<td>{{stock.modifiedBy}}</td>
+							<td>{{stock.modifiedDate}}</td>
+							<td>
+								<button type="button" class="btn btn-default"
+										ng-click="updateStockInit(stock)">
+									<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-default"
+										ng-click="deleteStock(stock)">
+									<span class="glyphicon glyphicon-remove-circle"
+										  aria-hidden="true"></span>
+								</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+</body>
+
+<style>
+	body {font-family: Arial;}
+
+	/* Style the tab */
+	.tab {
+		overflow: hidden;
+		border: 1px solid #ccc;
+		background-color: #f1f1f1;
+	}
+
+	/* Style the buttons inside the tab */
+	.tab button {
+		background-color: inherit;
+		float: left;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 14px 16px;
+		transition: 0.3s;
+		font-size: 17px;
+	}
+
+	/* Change background color of buttons on hover */
+	.tab button:hover {
+		background-color: #ddd;
+	}
+
+	/* Create an active/current tablink class */
+	.tab button.active {
+		background-color: #ccc;
+	}
+
+	/* Style the tab content */
+	.tabcontent {
+		display: none;
+		padding: 6px 12px;
+		-webkit-animation: fadeEffect 1s;
+		animation: fadeEffect 1s;
+	}
+
+	/* Fade in tabs */
+	@-webkit-keyframes fadeEffect {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+
+	@keyframes fadeEffect {
+		from {opacity: 0;}
+		to {opacity: 1;}
+	}
+</style>
+</html>
