@@ -23,11 +23,11 @@ import com.arpax.ARPA.sevice.EmployeeService;
 
 @RestController
 @RequestMapping("/api")
-public class EmployeeResource {
+public class EmployeeController {
 
 	private EmployeeService employeeService;
 
-	public EmployeeResource(EmployeeService employeeService) {
+	public EmployeeController(EmployeeService employeeService) {
 		this.employeeService = employeeService;
 	}
 

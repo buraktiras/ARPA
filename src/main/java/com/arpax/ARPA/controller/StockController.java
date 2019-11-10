@@ -23,11 +23,11 @@ import com.arpax.ARPA.sevice.StockService;
 
 @RestController
 @RequestMapping("/api")
-public class StockResource {
+public class StockController {
 
 	private StockService stockService;
 
-	public StockResource(StockService stockService) {
+	public StockController(StockService stockService) {
 		this.stockService = stockService;
 	}
 
