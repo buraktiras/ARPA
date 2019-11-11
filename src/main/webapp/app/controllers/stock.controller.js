@@ -11,7 +11,9 @@ function StockController($scope, Stock) {
 	$scope.buttonText="Submit";
 	$scope.addNewStockButtonText="Add New Stock";
 	$scope.cancelButtonText="Cancel";
-	
+	$scope.sellButtonText="Sell";
+	$scope.buyButtonText="Buy";
+
 	$scope.saveStock = function() {
 		if ($scope.stock.id !== undefined) {
 			Stock.update($scope.stock, function() {

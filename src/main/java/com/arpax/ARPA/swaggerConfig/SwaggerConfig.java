@@ -1,4 +1,4 @@
-package com.arpax.ARPA.config;
+package com.arpax.ARPA.swaggerConfig;
 
 
 import org.springframework.context.annotation.Bean;
