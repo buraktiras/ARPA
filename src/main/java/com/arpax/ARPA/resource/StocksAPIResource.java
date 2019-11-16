@@ -19,10 +19,7 @@ public class StocksAPIResource {
         return stockRepository.findAll();
     }
 
-    @PostMapping(value = "/loadStock")
-    public List<Stock> persist(@RequestBody final Stock stock) {
-        stockRepository.save(stock);
-        return stockRepository.findAll();
-    }
+
+
 
 }

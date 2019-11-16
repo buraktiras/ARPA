@@ -1,4 +1,4 @@
-package com.arpax.ARPA.sevice;
+package com.arpax.ARPA.service;
 
 import com.arpax.ARPA.model.Stock;
 import com.arpax.ARPA.repository.StockRepository;
@@ -19,7 +19,7 @@ public class StockService {
 	}
 
 	public Stock save(Stock stock) {
-		if (stock.getId() != null && stockRepository.exists(stock.getId())) {
+		if (stock.getId() != null && stockRepository.existsById(stock.getId())) {
 			throw new EntityExistsException("There is already existing entity with such ID in the database.");
 		}
 
@@ -27,7 +27,7 @@ public class StockService {
 	}
 
 	public Stock update(Stock stock) {
-		if (stock.getId() != null && !stockRepository.exists(stock.getId())) {
+		if (stock.getId() != null && !stockRepository.existsById(stock.getId())) {
 			throw new EntityNotFoundException("There is no entity with such ID in the database.");
 		}
 
@@ -39,10 +39,10 @@ public class StockService {
 	}
 
 	public Stock findOne(Integer id) {
-		return stockRepository.findOne(id);
+		return stockRepository.findById(id).orElse(new Stock());
 	}
 
 	public void delete(Integer id) {
-		stockRepository.delete(id);
+		stockRepository.deleteById(id);
 	}
 }

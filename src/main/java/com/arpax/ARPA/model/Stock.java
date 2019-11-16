@@ -23,6 +23,7 @@ public class Stock {
 
 	private String modifiedBy;
 
+
 	public Stock() {
 	}
 

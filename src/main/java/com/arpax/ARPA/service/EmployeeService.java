@@ -1,11 +1,10 @@
-package com.arpax.ARPA.sevice;
+package com.arpax.ARPA.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import com.arpax.ARPA.model.Employee;
+import com.arpax.ARPA.model.Stock;
 import com.arpax.ARPA.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ public class EmployeeService {
 	}
 
 	public Employee save(Employee employee) {
-		if (employee.getId() != null && employeeRepository.exists(employee.getId())) {
+		if (employee.getId() != null && employeeRepository.existsById(employee.getId())) {
 			throw new EntityExistsException("There is already existing entity with such ID in the database.");
 		}
 
@@ -28,7 +27,7 @@ public class EmployeeService {
 	}
 
 	public Employee update(Employee employee) {
-		if (employee.getId() != null && !employeeRepository.exists(employee.getId())) {
+		if (employee.getId() != null && !employeeRepository.existsById(employee.getId())) {
 			throw new EntityNotFoundException("There is no entity with such ID in the database.");
 		}
 
@@ -40,11 +39,11 @@ public class EmployeeService {
 	}
 
 	public Employee findOne(Integer id) {
-		return employeeRepository.findOne(id);
+		return employeeRepository.findById(id).orElse(new Employee());
 	}
 
 	public void delete(Integer id) {
-		employeeRepository.delete(id);
+		employeeRepository.deleteById(id);
 	}
 
 }

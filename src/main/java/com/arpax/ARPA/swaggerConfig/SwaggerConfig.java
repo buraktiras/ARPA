@@ -22,7 +22,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.arpax.ARPA"))
-                .paths(regex("/rest.*"))
+                .paths(regex("/api.*"))
                 .build()
                 .apiInfo(metaInfo());
     }

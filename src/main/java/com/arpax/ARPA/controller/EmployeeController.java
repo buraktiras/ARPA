@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.arpax.ARPA.sevice.EmployeeService;
+import com.arpax.ARPA.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api")
